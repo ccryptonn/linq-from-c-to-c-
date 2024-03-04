@@ -7,17 +7,17 @@ public:
             _vec.push_back(*begin);
         }
     }
-    // возвращает вектор
+    // ГўГ®Г§ГўГ°Г Г№Г ГҐГІ ГўГҐГЄГІГ®Г°
     std::vector<_t> tovector() { 
         return _vec;
     }
-    // возвращает массив
+    // ГўГ®Г§ГўГ°Г Г№Г ГҐГІ Г¬Г Г±Г±ГЁГў
     _t* toarray() {
         _t* retarray = new _t[_vec.size()];
         std::copy(_vec._Unchecked_begin(), _vec._Unchecked_end(), retarray);
         return retarray;
     }
-    // выборка элементов - предикат с аргументом по ссылке
+    // ГўГ»ГЎГ®Г°ГЄГ  ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў - ГЇГ°ГҐГ¤ГЁГЄГ ГІ Г± Г Г°ГЈГіГ¬ГҐГ­ГІГ®Г¬ ГЇГ® Г±Г±Г»Г«ГЄГҐ
     linq<_t>* where(bool(*func)(_t& type)) {
         for (typename std::vector<_t>::iterator begin = _vec.begin(); begin != _vec.end();) {
             if (!func(*begin)) {
@@ -29,7 +29,7 @@ public:
         }
         return this;
     }
-    // выборка элементов
+    // ГўГ»ГЎГ®Г°ГЄГ  ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
     linq<_t>* where(bool(*func)(_t type)) {
         for (typename std::vector<_t>::iterator begin = _vec.begin(); begin != _vec.end();) {
             if (!func(*begin)) {
@@ -41,7 +41,7 @@ public:
         }
         return this;
     }
-    typename std::vector<_t>::iterator min() {
+    typename std::vector<_t>::iterator min_element() {
         if (_vec.size() == 1) { return _vec.begin(); }
         typename std::vector<_t>::iterator begin = ++(_vec.begin());
         typename std::vector<_t>::iterator end = _vec.end();
@@ -53,7 +53,7 @@ public:
            return minelem;
         }
     }
-    typename std::vector<_t>::iterator max() {
+    typename std::vector<_t>::iterator max_element() {
         if (_vec.size() == 1) { return _vec.begin(); }
         typename std::vector<_t>::iterator begin = ++(_vec.begin());
         typename std::vector<_t>::iterator end = _vec.end();
@@ -111,7 +111,7 @@ public:
         }
         return _sum;
     }
-    //выборка по лямбде - аргумент по ссылке
+    //ГўГ»ГЎГ®Г°ГЄГ  ГЇГ® Г«ГїГ¬ГЎГ¤ГҐ - Г Г°ГЈГіГ¬ГҐГ­ГІ ГЇГ® Г±Г±Г»Г«ГЄГҐ
     size_t count(bool(*f)(_t& arg)) {
         size_t _c = 0;
         typename std::vector<_t>::iterator last = _vec.end();
@@ -122,7 +122,7 @@ public:
         }
         return _c;
     }
-    //выборка по лямбде - аргумент не по ссылке
+    //ГўГ»ГЎГ®Г°ГЄГ  ГЇГ® Г«ГїГ¬ГЎГ¤ГҐ - Г Г°ГЈГіГ¬ГҐГ­ГІ Г­ГҐ ГЇГ® Г±Г±Г»Г«ГЄГҐ
     size_t count(bool(*f)(_t arg)) {
         size_t _c = 0;
         typename std::vector<_t>::iterator last = _vec.end();
