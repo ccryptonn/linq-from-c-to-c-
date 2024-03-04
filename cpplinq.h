@@ -14,7 +14,7 @@ public:
     // âîçâðàùàåò ìàññèâ
     _t* toarray() {
         _t* retarray = new _t[_vec.size()];
-        std::copy(_vec._Unchecked_begin(), _vec._Unchecked_end(), retarray);
+        std::copy(_vec.begin(), _vec.end(), retarray);
         return retarray;
     }
     // âûáîðêà ýëåìåíòîâ - ïðåäèêàò ñ àðãóìåíòîì ïî ññûëêå
