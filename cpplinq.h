@@ -50,8 +50,8 @@ public:
             if (*minelem > *begin) {
                 minelem = begin;
             }
-           return minelem;
         }
+        return minelem;
     }
     typename std::vector<_t>::iterator max_element() {
         if (_vec.size() == 1) { return _vec.begin(); }
